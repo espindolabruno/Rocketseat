@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Macacomanco</title>
+    </head>
+
+<body>
+
+    <div id="teste">
+        <div class="quadrado"></div>
+    </div>
+
+    <button class="botao">Me clique aqui!</button>
+
+        <script>
+            var margem = 0, margemAnterior = 0, margemLeft =0;
+            var btnElement = document.querySelector('button.botao');
+            
+            btnElement.onclick = function()
+            {
+                            
+                        var quadrado = document.createElement('div');
+                            quadrado.id = 'quadrado';
+                            quadrado.style.width = 100;
+                            quadrado.style.height = 100;
+                            quadrado.style.backgroundColor = '#F00'; 
+                            quadrado.style.marginLeft = margemLeft;  
+                            quadrado.style.marginTop = margemAnterior - margem;             
+
+
+                        var containerElement = document.querySelector('#teste');
+                        containerElement.appendChild(quadrado);
+
+                margemAnterior = margem;          
+            margem = margem + 100;    
+            margemLeft = margemLeft +100;
+                
+                if (margemLeft === 1300){
+                    margem = 0;
+                    margemAnterior = 0;
+                    margemLeft = 0;
+                }
+                var quadradoElement = document.querySelector('#quadrado');
+                
+            }
+
+            
+            quadradoElement.onclick = getRandomColor; 
+
+            
+
+            function getRandomColor() 
+            {
+                
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) 
+                {
+                    color += letters[Math.floor(Math.random() * 16)];
+                    }   
+                    alert(color); 
+                return color;
+
+            }
+        
+            var newColor = getRandomColor(); // #E943F0
+            
+
+       
+        </script>
+</body>
+</html>
