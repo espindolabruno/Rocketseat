@@ -14,37 +14,34 @@
         <script>
             var margem = 0, margemAnterior = 0, margemLeft =0;
             var teste = 0;
-            var classId = [];
             var btnElement = document.querySelector('button.botao');
             
-            btnElement.onclick = function()
-            {
+                btnElement.onclick = function ()
+                {
                             
-                        var quadrado = document.createElement('div');
-                            quadrado.className = 'quadrado' + teste;
-                            classId.push = teste;
-                            quadrado.style.width = 100;
-                            quadrado.style.height = 100;
-                            quadrado.style.backgroundColor = '#F00'; 
-                            quadrado.style.marginLeft = margemLeft;  
-                            quadrado.style.marginTop = margemAnterior - margem;             
-                            quadrado.setAttribute('onmouseover', 'aplicacor()');
-                        var containerElement = document.querySelector('#teste');
-                        containerElement.appendChild(quadrado);
+                    var quadrado = document.createElement('div');
+                    quadrado.className = 'quadrado'+teste;
+                    quadrado.style.width = 100;
+                    quadrado.style.height = 100;
+                    quadrado.style.backgroundColor = '#F00'; 
+                    quadrado.style.marginLeft = margemLeft;  
+                    quadrado.style.marginTop = margemAnterior - margem;             
+                    quadrado.setAttribute('onmouseover', 'aplicacor(className)');
+
+                    var containerElement = document.querySelector('#teste');
+                    containerElement.appendChild(quadrado);
 
                 margemAnterior = margem;          
-            margem = margem + 100;    
-            margemLeft = margemLeft +100;
+                margem = margem + 100;    
+                margemLeft = margemLeft +100;
                 
-                if (margemLeft === 1300){
-                    margem = 0;
-                    margemAnterior = 0;
-                    margemLeft = 0;
-                }
-               
+                    if (margemLeft === 1300){
+                        margem = 0;
+                        margemAnterior = 0;
+                        margemLeft = 0;
+                    }   
                 teste ++;
-                alert(classId[teste]);
-            }
+                }
         
             function getRandomColor() 
             {
@@ -59,13 +56,14 @@
 
             }
         
-            var newColor = getRandomColor(); // #E943F0
-             
+            
 
-            function aplicacor(){
-                getRandomColor();
-                alert('alerta');    
-                var cor = document.querySelector('div.quadrado').style.backgroundColor = newColor; 
+            function aplicacor(classe)
+            {
+                getRandomColor; 
+                var newColor = getRandomColor(); // #E943F0   
+                classId = document.className;
+                document.querySelector('div.'+classe).style.backgroundColor = newColor; 
             }
        
         </script>
