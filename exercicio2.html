@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>exercicio 02</title>
+    </head>
+
+<body>
+    <div id="lista">
+        Digite o Nome Completo:
+         <input type="text" name="nome">
+    </div>
+    <button class="botao" onclick="Adicionar()">Me clique aqui!</button>
+    
+
+    <script>
+    
+        var nomes = ['diego','Gabriel','Bruno'];
+
+        var ElementoPai = document.querySelector('#lista');
+        var ElementoFilho = document.createElement('ul');
+        ElementoFilho.setAttribute('type','circle');
+
+            local.appendChild(ElementoFilho);
+
+            for (var i = 0; i < nomes.length; i++)
+                {
+                var item = document.createElement('li');
+
+                item.appendChild(document.createTextNode(nomes[i]));
+
+                ElementoFilho.appendChild(item);
+
+                }
+
+         
+            function Adicionar()
+            {
+
+                var inputTexto = document.querySelector('input[name="nome"]');
+                var texto = inputTexto.value;
+                nomes.push(texto);
+                var item = document.createElement('li');
+
+                item.appendChild(document.createTextNode(nomes[nomes.length]));
+                ElementoFilho.appendChild(item);
+
+                inputTexto.value ="";
+                inputTexto.focus();
+
+            }
+
+    </script>
+</body>
+</html>
