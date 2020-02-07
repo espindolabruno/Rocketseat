@@ -1,0 +1,16 @@
+#Valores
+{
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: large;
+padding: 1%;
+}
+
+#listaRepo 
+{
+    padding-left: 5%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    margin-right: 70%;
+    margin-top: 1%;
+
+}
